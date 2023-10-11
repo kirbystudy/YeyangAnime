@@ -1,0 +1,58 @@
+{
+  "id": "4266302",
+  "name": "react-YeyangAnime",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4767012",
+      "name": "left",
+      "font_class": "left",
+      "unicode": "e7eb",
+      "unicode_decimal": 59371
+    },
+    {
+      "icon_id": "8288981",
+      "name": "关闭",
+      "font_class": "guanbi",
+      "unicode": "e867",
+      "unicode_decimal": 59495
+    },
+    {
+      "icon_id": "20360310",
+      "name": "影视",
+      "font_class": "yingshi",
+      "unicode": "f261",
+      "unicode_decimal": 62049
+    },
+    {
+      "icon_id": "21009694",
+      "name": "播放",
+      "font_class": "bofang",
+      "unicode": "f42d",
+      "unicode_decimal": 62509
+    },
+    {
+      "icon_id": "27804877",
+      "name": "收藏",
+      "font_class": "shoucang",
+      "unicode": "100ad",
+      "unicode_decimal": 65709
+    },
+    {
+      "icon_id": "30640785",
+      "name": "关系图",
+      "font_class": "guanxitu",
+      "unicode": "e6c3",
+      "unicode_decimal": 59075
+    },
+    {
+      "icon_id": "5810220",
+      "name": "menu",
+      "font_class": "menu",
+      "unicode": "e7f2",
+      "unicode_decimal": 59378
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+@media screen and (min-width: $mobile-device) {
+  .cardHeader {
+    @include font-ura();
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    color: rgb(14, 136, 250);
+    user-select: none;
+    .animeLogo {
+      width: 15rem;
+      height: auto;
+    }
+    .week {
+      display: flex;
+      font-size: 1.5rem;
+      position: relative;
+      margin-top: 1rem;
+      overflow: auto;
+      li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-shrink: 0;
+        margin: 0 0.3rem;
+        width: 5rem;
+        cursor: pointer;
+        span {
+          font-size: 1rem;
+        }
+        &.active {
+          color: rgb(250, 14, 73);
+        }
+      }
+    }
+  }
+
+  .tab-inner {
+    display: flex;
+    justify-content: space-around;
+    overflow: auto;
+    flex-wrap: wrap;
+    height: 46rem;
+    padding: 1rem;
+    flex: 1;
+  }
+}
+
+@media screen and (min-width: $smallpc-device) {
+  .tab-inner {
+    display: flex;
+    justify-content: flex-start;
+    overflow-y: auto;
+    flex-wrap: nowrap;
+    padding: 1rem;
+    height: unset;
+    flex: 1;
+  }
+}
+
+@media screen and (min-width: $normal-device) {
+  .bangumi {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    border: 0.2rem solid #000;
+    border-radius: 1rem;
+    padding: 1.2rem;
+
+    .cardHeader {
+      flex-direction: row;
+      align-items: center;
+
+      .week {
+        font-size: 1.5rem;
+        margin-top: 0;
+        overflow: unset;
+      }
+    }
+
+    .tabInner {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      overflow: auto;
+      height: auto;
+      flex: unset;
+      padding-bottom: 1rem;
+    }
+  }
+}

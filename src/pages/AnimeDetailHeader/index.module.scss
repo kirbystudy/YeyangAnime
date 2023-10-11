@@ -1,0 +1,29 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+@media screen and (min-width: $mobile-device) {
+  .container {
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 1rem;
+    .imgContainer {
+      height: 18rem;
+      min-height: 8rem;
+      max-width: 12rem;
+      flex-shrink: 0;
+      @include border-normal();
+      border-radius: unset;
+    }
+  }
+}
+
+@media screen and (min-width: $pad-device) {
+  .container {
+    .imgContainer {
+      height: 25rem;
+      min-width: 16rem;
+    }
+  }
+}

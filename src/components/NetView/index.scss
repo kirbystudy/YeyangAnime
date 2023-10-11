@@ -1,0 +1,36 @@
+@import '@/styles/mixins.scss';
+
+.netView {
+  margin: 0.5rem 0;
+  @include bg_color('main_bgc');
+  @include border-pinkline(1rem, 0);
+  position: relative;
+  canvas {
+    max-width: 100%;
+    min-height: 500px;
+    outline: none;
+    background: #be93c5; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to bottom,
+      #7bc6cc,
+      #be93c5
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to bottom,
+      #7bc6cc,
+      #be93c5
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 10px;
+  }
+
+  .canvas-wrap {
+    position: relative;
+
+    .progress-bar {
+      position: absolute;
+      z-index: 10;
+      top: 46%;
+      left: 48%;
+    }
+  }
+}

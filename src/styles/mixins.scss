@@ -1,0 +1,74 @@
+@import './theme.scss';
+
+@mixin flex-vertical-center($justify-content: center, $flex-direction: row) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: center;
+}
+
+// 街角魔族类型的图片边框
+@mixin border-pinkline($width, $outset) {
+  border: $width solid transparent;
+  border-radius: $width;
+  border-image: url(../assets/imgs/page.png) 25 repeat;
+  border-image-outset: $outset;
+}
+
+// 优先使用urafont 其次幼圆
+@mixin font-ura() {
+  font-family: 'maoken', 'urafont', '微软雅黑';
+  font-weight: 500;
+}
+
+// 统一边框类型
+@mixin border-normal() {
+  border: 0.2rem solid rgb(0, 0, 0);
+  border-radius: 1rem;
+}
+
+// 遍历主题map
+@mixin themeify {
+  @each $theme-name, $theme-map in $themes {
+    //!global 把局部变量强升为全局变量
+    $theme-map: $theme-map !global;
+    //判断html的data-theme的属性值  #{}是sass的插值表达式
+    //& sass嵌套里的父容器标识   @content是混合器插槽，像vue的slot
+    [data-theme='#{$theme-name}'] & {
+      @content;
+    }
+  }
+}
+
+// 声明一个根据Key获取颜色的方法
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+// 获取背景颜色
+@mixin bg_color($color) {
+  @include themeify {
+    background-color: themed($color) !important;
+  }
+}
+
+// 获取字体颜色
+@mixin font_color($color) {
+  @include themeify {
+    color: themed($color) !important;
+  }
+}
+
+// 获取盒子阴影
+@mixin shadow_color($color) {
+  @include themeify {
+    box-shadow: themed($color) !important;
+  }
+}
+
+// 填充颜色
+@mixin my_fill($color) {
+  @include themeify {
+    color: themed($color) !important;
+  }
+}

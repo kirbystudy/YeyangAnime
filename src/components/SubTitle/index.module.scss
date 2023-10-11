@@ -1,0 +1,28 @@
+.subTitle {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+  padding: 1rem 1rem 0 1rem;
+  font-size: 1.5rem;
+  border-radius: 1rem 1rem 0 0;
+  background-color: #eee;
+  .content {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .extra {
+    font-size: 1.2rem;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    height: 5px;
+    border-radius: 10px;
+    background-color: rgb(250, 14, 73);
+  }
+}

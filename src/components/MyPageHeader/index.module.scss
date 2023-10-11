@@ -1,0 +1,24 @@
+@import '@/styles/mixins.scss';
+
+.header {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    .backBtn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(255, 255, 255);
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        @include border-normal();
+        &:hover {
+            background-color: rgb(250, 14, 73);
+            color: rgb(255, 255, 255);
+        }
+    }
+    .pageTitle {
+        margin-left: 2rem;
+        font-size: 1.5rem;
+    }
+}

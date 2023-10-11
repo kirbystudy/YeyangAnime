@@ -1,0 +1,108 @@
+@import '@/styles/mixins.scss';
+@import '@/styles/variables.scss';
+
+.bottom-line-btn {
+  position: relative;
+  &::after {
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: $secondaryDeepestColor;
+    content: '';
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    &:after {
+      width: 100%;
+    }
+  }
+}
+
+.hidden {
+  transform: translate(0, -($navHeight));
+}
+
+.navWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  @include flex-vertical-center(space-between);
+  padding: 0 50px;
+  height: $navHeight;
+  @include bg_color('nav_bgc');
+  @include font_color('nav_color');
+  @include shadow_color('nav_shadow_color');
+  z-index: 999;
+  transition: all 0.8s ease;
+  .navTitle {
+    font-size: $xxlfontSize;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .webNav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .navItem {
+      @extend .bottom-line-btn;
+      cursor: pointer;
+      padding: 0 20px;
+      span {
+        margin-left: 5px;
+        @include font_color('nav_color');
+        font-weight: 500;
+      }
+    }
+  }
+
+  .extendNav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+
+.mobileNav {
+  display: none;
+  height: 55px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  @include bg_color('mobile_nav_bgc');
+  @include font_color('nav_color');
+  transition: all 0.8s ease;
+  .icon {
+    width: 25px;
+    height: 25px;
+    @include my_fill('nav_color');
+  }
+  .mobileNavTitle {
+    font-size: $mobileNavTitleSize;
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 1028px) {
+  .navWrap {
+    display: none;
+  }
+
+  .mobileNav {
+    display: flex;
+    padding: 0 10px;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

@@ -1,0 +1,17 @@
+@import '@/styles/base.scss';
+@import '@/styles/mixins.scss';
+@import '@/styles/theme.scss';
+
+#root {
+  height: 100%;
+}
+
+body {
+  font: 1em/1.4 'maoken', 'urafont', 'Microsoft Yahei', 'PingFang SC', 'Avenir', 'Segoe UI', 'Hiragino Sans GB', 'STHeiti', 'Microsoft Sans Serif', 'WenQuanYi Micro Hei', sans-serif
+}
+
+.app {
+  margin: 0 auto;
+  height: 100%;
+  @include bg_color('globlBgColor');
+}
